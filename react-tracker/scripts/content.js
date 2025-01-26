@@ -53,11 +53,9 @@ function addCheckboxes() {
             }
         });
     });
-
-    return elements.filter((el, idx) => idx === 0);
 }
 
-// MutationObserver로 DOM 변경 감지
+// DOM 변경 감지
 const observer = new MutationObserver(() => {
     addCheckboxes();
 });
