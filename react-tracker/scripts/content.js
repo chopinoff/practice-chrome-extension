@@ -59,6 +59,33 @@ function addCheckboxes() {
         });
 
         updateCount(panel, total, count);
+
+        const previousAnchor = panel.parentElement.previousElementSibling;
+        const badge = previousAnchor.querySelector('div > div > span');
+
+        if (badge) {
+            // hover 이벤트 추가
+            previousAnchor.style.transition = 'all 0.5s';
+
+            previousAnchor.addEventListener('mouseover', () => {
+                badge.style.fontSize = '12px';
+                badge.style.width = 'inherit';
+                badge.style.height = '20px';
+                badge.style.lineHeight = '20px';
+                badge.style.paddingLeft = '8px';
+                badge.style.paddingRight = '8px';
+            });
+
+            // hover 해제 시 원래 상태로 복구 (마우스 아웃)
+            previousAnchor.addEventListener('mouseout', () => {
+                badge.style.fontSize = '0px';
+                badge.style.width = '10px';
+                badge.style.height = '10px';
+                badge.style.lineHeight = '0px';
+                badge.style.paddingLeft = '0px';
+                badge.style.paddingRight = '0px';
+            });
+        }
     });
 }
 
@@ -116,15 +143,6 @@ function updateState(innerDiv, count, total) {
         badge = document.createElement('span');
         innerDiv.appendChild(badge);
     }
-    badge.style.display = 'inline-block';
-    badge.style.fontSize = '12px';
-    badge.style.lineHeight = '20px';
-    badge.style.height = '20px';
-    badge.style.textAlign = 'center';
-    badge.style.backgroundColor = 'red';
-    badge.style.paddingLeft = '8px';
-    badge.style.paddingRight = '8px';
-    badge.style.borderRadius = '40px';
 
     let state = '';
     if (count === 0) {
@@ -139,6 +157,16 @@ function updateState(innerDiv, count, total) {
     }
 
     badge.textContent = state;
+
+    badge.style.display = 'inline-block';
+    badge.style.width = '10px';
+    badge.style.height = '10px';
+    badge.style.lineHeight = '0px';
+    badge.style.textAlign = 'center';
+    badge.style.fontSize = '0px';
+    badge.style.paddingLeft = '0px';
+    badge.style.paddingRight = '0px';
+    badge.style.borderRadius = '40px';
 }
 
 // DOM 변경 감지
