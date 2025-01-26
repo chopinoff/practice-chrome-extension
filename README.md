@@ -2,6 +2,13 @@
 
 [React 공식 문서](https://ko.react.dev/learn)에 학습 여부를 체크할 수 있는 확장 프로그램 (100% 개인 작업)
 
+## Screenshots
+
+확장 프로그램 실행 전후 비교 (왼쪽부터 실행 전, 실행 후)
+
+<img src="https://github.com/user-attachments/assets/f03f9aaf-3c11-47f8-ab6a-8150cd9968e7" width="500px">
+<img src="https://github.com/user-attachments/assets/b98e7f97-12a6-48dc-b535-856908a72086" width="500px">
+
 ## Feature
 
 ### v1.0
@@ -13,8 +20,6 @@
 2. 섹션 내 학습한 페이지의 수를 카운트하고 진행 여부를 업데이트
     - 체크박스를 클릭할 때마다 업데이트
     - hover 시 진행 여부를 텍스트로 보여줌
-
-![image](https://github.com/user-attachments/assets/aa192510-dbe6-4dd7-93f0-f695f6ca9e7e)
 
 <br>
 
