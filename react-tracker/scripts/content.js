@@ -8,9 +8,9 @@ function addCheckboxes() {
         listItems.forEach((li, index) => {
             const anchor = li.querySelector('a');
             if (anchor) {
-                // 체크박스 중복 추가 방지
+                // 체크박스가 이미 있으면 중복 추가 방지
                 if (!li.querySelector('input[type="checkbox"]')) {
-                    // div 태그 생성
+                    // div 생성
                     const container = document.createElement('div');
                     container.style.display = 'flex';
                     container.style.alignItems = 'center';
@@ -53,9 +53,11 @@ function addCheckboxes() {
             }
         });
     });
+
+    return elements.filter((el, idx) => idx === 0);
 }
 
-// DOM 변경 감지
+// MutationObserver로 DOM 변경 감지
 const observer = new MutationObserver(() => {
     addCheckboxes();
 });
