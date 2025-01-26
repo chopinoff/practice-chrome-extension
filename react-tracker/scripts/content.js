@@ -8,6 +8,17 @@ function addCheckboxes() {
         let count = 0;
 
         listItems.forEach((li, index) => {
+            const padDiv = li.querySelector('div');
+            if (padDiv) {
+                padDiv.style.paddingLeft = '20px';
+                const innerPadDiv = padDiv.querySelector('a > div');
+                if (innerPadDiv) {
+                    innerPadDiv.style.paddingLeft = '5px';
+                    innerPadDiv.style.fontSize = '12px';
+                    innerPadDiv.style.letterSpacing = '-0.5px';
+                }
+            }
+
             const anchor = li.querySelector('a');
             if (anchor) {
                 // 체크박스가 이미 있으면 중복 추가 방지
@@ -20,8 +31,8 @@ function addCheckboxes() {
                     // 체크박스 생성
                     const checkbox = document.createElement('input');
                     checkbox.type = 'checkbox';
-                    checkbox.style.width = '20px';
-                    checkbox.style.height = '20px';
+                    checkbox.style.width = '14px';
+                    checkbox.style.height = '14px';
                     checkbox.style.cursor = 'pointer';
 
                     // 체크박스 상태 로컬 스토리지에서 불러오기
@@ -41,6 +52,7 @@ function addCheckboxes() {
                     // a 스타일 변경
                     anchor.style.display = 'inline';
                     anchor.style.backgroundColor = '';
+                    anchor.style.paddingLeft = '8px';
 
                     // a 스타일을 container에 복사 (클래스 추가)
                     anchor.classList.forEach((className) => {
