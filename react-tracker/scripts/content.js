@@ -10,6 +10,7 @@ function addCheckboxes() {
         listItems.forEach((li, index) => {
             const padDiv = li.querySelector('div');
             if (padDiv) {
+                padDiv.style.padding = '0px';
                 padDiv.style.paddingLeft = '20px';
                 const innerPadDiv = padDiv.querySelector('a > div');
                 if (innerPadDiv) {
